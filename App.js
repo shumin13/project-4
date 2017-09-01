@@ -1,3 +1,16 @@
+import * as firebase from 'firebase'
+
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyA8NyWPjkQLV6duBnyAf-K9WE-UDbiaLOQ",
+  authDomain: "project-4-c79e1.firebaseapp.com",
+  databaseURL: "https://project-4-c79e1.firebaseio.com",
+  projectId: "project-4-c79e1",
+  storageBucket: "project-4-c79e1.appspot.com",
+  messagingSenderId: "437402668990"
+}
+firebase.initializeApp(firebaseConfig)
+
 import React from 'react'
 import {
   DrawerNavigator,
@@ -8,7 +21,8 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 import SideNav from './src/components/SideNav'
 
-import Login from './src/components/Login/Login'
+import Login from './src/components/Auth/Login'
+import Register from './src/components/Auth/Register'
 
 import Home from './src/tabs/Home'
 import Settings from './src/tabs/Settings'
@@ -26,14 +40,14 @@ const SettingsTab = StackNavigator({
       headerBackTitle: 'Back',    // Title back button Back when we navigate to Profile from Settings
     },
   },
-  Profile: {
-    screen: Profile,
-    navigationOptions: ({ navigation }) => ({
-      // Customize header's title with user name passed to navigate()
-      // You can pass any props you'd like. For instance: navigate('Profile', { user: 'Tom' }
-      title: `${navigation.state.params.user}'s Profile`,
-    }),
-  },
+  // Profile: {
+  //   screen: Profile,
+  //   navigationOptions: ({ navigation }) => ({
+  //     // Customize header's title with user name passed to navigate()
+  //     // You can pass any props you'd like. For instance: navigate('Profile', { user: 'Tom' }
+  //     title: `${navigation.state.params.user}'s Profile`,
+  //   }),
+  // },
   Login: {
     screen: Login,
     navigationOptions: {
@@ -86,6 +100,12 @@ const TabsWithDrawerNavigation = DrawerNavigator({
 export default StackNavigator({
   Login: {
     screen: Login
+  },
+  Register: {
+    screen: Register
+  },
+  Profile: {
+    screen: Profile
   },
   TabsWithDrawer: {
     screen: TabsWithDrawerNavigation,
