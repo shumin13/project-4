@@ -3,12 +3,10 @@ import { Text, View, TouchableOpacity, StatusBar, ScrollView } from 'react-nativ
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from '../styles/styles.js'
 import firebase from '../Firebase/firebase'
-
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-const userIcon = (<Icon name='face-profile' size={20} />)
-
 import t from 'tcomb-form-native'
 import moment from 'moment'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+const userIcon = (<Icon name='face-profile' size={20} />)
 
 // Material Design Style Underlines
 var _ = require('lodash')
@@ -39,7 +37,7 @@ var bloodType = t.enums({
 
 var Details = t.struct({
   name: t.String,
-  birthday: t.Date,
+  // birthday: t.Date,
   bloodType: bloodType,
   allergy: t.String,
   emergencyContactName: t.String,
@@ -61,21 +59,20 @@ var options = {
 }
 
 export default class Profile extends Component {
-  constructor (props) {
-    super(props)
+  onPress () {
+    var value = this.refs.form.getValue()
+    if (value) {
+      var uid = firebase.auth().currentUser.uid
+      const rootRef = firebase.database().ref(`users/${uid}`)
+      rootRef.child('name').set(value.name)
+      // rootRef.child('birthday').set(value.birthday)
+      rootRef.child('bloodType').set(value.bloodType)
+      rootRef.child('allergy').set(value.allergy)
+      rootRef.child('emergencyContactName').set(value.emergencyContactName)
+      rootRef.child('emergencyContactNumber').set(value.emergencyContactNumber)
 
-    this.state = {
-      name: '',
-      birthday: '',
-      bloodType: '',
-      allergy: '',
-      emergencyContactName: '',
-      emergencyContactNumber: ''
+      .then(() => this.props.navigation.navigate('DrawerNavigation'))
     }
-
-    // onPress () {
-    //   var value = this.refs.form.getValue()
-    // }
   }
 
   render () {
@@ -100,7 +97,7 @@ export default class Profile extends Component {
             <View style={styles.formContainer}>
               <Form ref='form' type={Details} options={options} />
 
-              <TouchableOpacity onPress={() => this.onPress} style={styles.buttonContainer}>
+              <TouchableOpacity onPress={() => this.onPress()} style={styles.buttonContainer}>
                 <Text style={styles.buttonText}>SUBMIT</Text>
               </TouchableOpacity>
             </View>
