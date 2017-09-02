@@ -5,7 +5,7 @@ import {
   Text,
   View
 } from 'react-native';
-import HeaderButton from '../components/HeaderButton';
+import HeaderButton from '../components/HeaderButton'
 
 export default class Home extends Component {
 
@@ -15,16 +15,8 @@ export default class Home extends Component {
       <View style={styles.container}>
         <HeaderButton onPress={() => navigate('DrawerOpen')} />
         <Text style={styles.header}>
-          What's up everybody!
+          New Session
         </Text>
-        <Button
-          onPress={() => navigate('Settings')}
-          title="Open Settings Tab"
-        />
-        <Button
-          onPress={() => navigate('Modal')}
-          title="Open Modal"
-        />
       </View>
     );
   }
@@ -42,4 +34,4 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginVertical: 20,
   },
-});
+})

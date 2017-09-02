@@ -1,4 +1,4 @@
-# Your Project Name
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #4: Project Name
 
 This is the starter code for WDI projects. Please update this README file with information specific to your project. Replace this paragraph for instance, with a short description of your project. Then update the sections below. Refer to your project specificaion for instructions on how to submit your projects.
 
@@ -55,9 +55,8 @@ Did you write user stories, draw wireframes, use task tracking, produce ERDs? Di
 
 ## Authors
 
-Did you collaborate with others on this project, list them here
-
-* **John McClain** - *Responsible for keeping vests white* - [GithubUserName](https://github.com/GithubUserName)
+* **Wan Zhen** - [thecodingdog](https://github.com/thecodingdog)
+* **Shumin** - [shumin13](https://github.com/shumin13)
 
 ## Acknowledgments
 
