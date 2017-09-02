@@ -19,8 +19,7 @@ module.exports = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: '700',
-    marginVertical: 20,
-    marginTop: 30
+    marginVertical: 20
   },
   formContainer: {
     padding: 20
@@ -59,5 +58,16 @@ module.exports = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     marginVertical: 10
+  },
+  headerContainer: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  header: {
+    fontSize: 20,
+    fontWeight: '700'
+  },
+  contentContainer: {
+    paddingVertical: 20
   }
 })

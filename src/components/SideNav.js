@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Text, View, TouchableOpacity } from 'react-native'
 import styles from './styles/styles.js'
-import firebase from './firebase'
+import firebase from './Firebase/firebase'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 const profileIcon = (<Icon name='user-circle-o' size={20} color='#2d7394' />)

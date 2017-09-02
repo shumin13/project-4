@@ -1,122 +1,114 @@
 import React, { Component } from 'react'
-import { Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, StatusBar } from 'react-native'
+import { Text, View, TouchableOpacity, StatusBar, ScrollView } from 'react-native'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from '../styles/styles.js'
-import firebase from '../firebase'
+import firebase from '../Firebase/firebase'
+
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+const userIcon = (<Icon name='face-profile' size={20} />)
+
+import t from 'tcomb-form-native'
+import moment from 'moment'
+
+// Material Design Style Underlines
+var _ = require('lodash')
+const stylesheet = _.cloneDeep(t.form.Form.stylesheet)
+stylesheet.textbox.normal.borderWidth = 0
+stylesheet.textbox.error.borderWidth = 0
+stylesheet.textbox.normal.marginBottom = 0
+stylesheet.textbox.error.marginBottom = 0
+stylesheet.textboxView.normal.borderWidth = 0
+stylesheet.textboxView.error.borderWidth = 0
+stylesheet.textboxView.normal.borderRadius = 0
+stylesheet.textboxView.error.borderRadius = 0
+stylesheet.textboxView.normal.borderBottomWidth = 1
+stylesheet.textboxView.error.borderBottomWidth = 1
+stylesheet.textbox.normal.marginBottom = 5
+stylesheet.textbox.error.marginBottom = 5
+
+var bloodType = t.enums({
+  'O+': 'O+',
+  'O-': 'O-',
+  'A+': 'A+',
+  'A-': 'A-',
+  'B+': 'B+',
+  'B-': 'B-',
+  'AB+': 'AB+',
+  'AB-': 'AB-'
+})
+
+var Details = t.struct({
+  name: t.String,
+  birthday: t.Date,
+  bloodType: bloodType,
+  allergy: t.String,
+  emergencyContactName: t.String,
+  emergencyContactNumber: t.Number
+})
+
+var options = {
+  stylesheet: stylesheet,
+  fields: {
+    birthday: {
+      config: {
+        format: (date) => {
+          const formatedDate = moment(date).format('DD MMMM YYYY')
+          return formatedDate
+        }
+      }
+    }
+  }
+}
 
 export default class Profile extends Component {
   constructor (props) {
     super(props)
+
     this.state = {
       name: '',
       birthday: '',
       bloodType: '',
       allergy: '',
-      emergContactName: '',
-      emergContactNumber: ''
+      emergencyContactName: '',
+      emergencyContactNumber: ''
     }
-  }
 
-  _auth () {
-    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-    .then(() => this.props.navigation.navigate('Profile'))
-    .catch(function (error) {
-      alert(error.message)
-    })
+    // onPress () {
+    //   var value = this.refs.form.getValue()
+    // }
   }
 
   render () {
-    // var user = firebase.auth().currentUser
-
-    const { navigate } = this.props.navigation
+    var Form = t.form.Form
     return (
 
-      <KeyboardAvoidingView behavior='padding' style={styles.container}>
-        <View style={styles.container}>
-          <StatusBar barStyle='light-content' />
+      <KeyboardAwareScrollView
+        style={{ backgroundColor: '#6ed3cf' }}
+        resetScrollToCoords={{ x: 0, y: 0 }}
+        contentContainerStyle={styles.container}>
+        <ScrollView contentContainerStyle={styles.contentContainer}>
 
-          <View style={styles.formContainer}>
-            <TextInput
-              style={styles.input}
-              placeholder='name'
-              placeholderTextColor='rgba(0,0,0,0.6)'
-              returnKeyType='next'
-              onSubmitEditing={() => this.passwordInput.focus()}
-              keyboardType='email-address'
-              autoCapitalize='none'
-              autoCorrect={false}
-              onChangeText={(email) => this.setState({email})}
-            />
+          <View style={styles.container}>
+            <StatusBar barStyle='light-content' />
 
-            <TextInput
-              style={styles.input}
-              placeholder='birthday'
-              placeholderTextColor='rgba(0,0,0,0.6)'
-              returnKeyType='next'
-              onSubmitEditing={() => this.passwordInput.focus()}
-              keyboardType='email-address'
-              autoCapitalize='none'
-              autoCorrect={false}
-              onChangeText={(email) => this.setState({email})}
-            />
+            <View style={styles.headerContainer}>
+              <Text style={styles.header}>
+                {userIcon} Create Profile
+              </Text>
+            </View>
 
-            <TextInput
-              style={styles.input}
-              placeholder='blood type'
-              placeholderTextColor='rgba(0,0,0,0.6)'
-              returnKeyType='next'
-              onSubmitEditing={() => this.passwordInput.focus()}
-              keyboardType='email-address'
-              autoCapitalize='none'
-              autoCorrect={false}
-              onChangeText={(email) => this.setState({email})}
-            />
+            <View style={styles.formContainer}>
+              <Form ref='form' type={Details} options={options} />
 
-            <TextInput
-              style={styles.input}
-              placeholder='allergy'
-              placeholderTextColor='rgba(0,0,0,0.6)'
-              returnKeyType='next'
-              onSubmitEditing={() => this.passwordInput.focus()}
-              keyboardType='email-address'
-              autoCapitalize='none'
-              autoCorrect={false}
-              onChangeText={(email) => this.setState({email})}
-            />
-
-            <TextInput
-              style={styles.input}
-              placeholder='emergency contact name'
-              placeholderTextColor='rgba(0,0,0,0.6)'
-              returnKeyType='next'
-              onSubmitEditing={() => this.passwordInput.focus()}
-              keyboardType='email-address'
-              autoCapitalize='none'
-              autoCorrect={false}
-              onChangeText={(email) => this.setState({email})}
-            />
-
-            <TextInput
-              style={styles.input}
-              placeholder='emergency contact number'
-              placeholderTextColor='rgba(0,0,0,0.6)'
-              returnKeyType='next'
-              onSubmitEditing={() => this.passwordInput.focus()}
-              keyboardType='email-address'
-              autoCapitalize='none'
-              autoCorrect={false}
-              onChangeText={(email) => this.setState({email})}
-            />
-
-            <TouchableOpacity
-              onPress={() => this._auth()}
-              style={styles.buttonContainer}>
-              <Text style={styles.buttonText}>SUBMIT</Text>
-            </TouchableOpacity>
+              <TouchableOpacity onPress={() => this.onPress} style={styles.buttonContainer}>
+                <Text style={styles.buttonText}>SUBMIT</Text>
+              </TouchableOpacity>
+            </View>
 
           </View>
 
-        </View>
-      </KeyboardAvoidingView>
+        </ScrollView>
+      </KeyboardAwareScrollView>
     )
   }
 }
