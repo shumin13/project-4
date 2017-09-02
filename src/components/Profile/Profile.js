@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, StatusBar } from 'react-native'
-import * as firebase from 'firebase'
 import styles from '../styles/styles.js'
+import firebase from '../firebase'
 
 export default class Profile extends Component {
   constructor (props) {
