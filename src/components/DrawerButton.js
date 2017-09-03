@@ -11,7 +11,7 @@ export default class DrawerButton extends Component {
   }
 
   static defaultProps = {
-    icon: 'md-menu',
+    icon: 'md-menu'
   }
 
   render() {
@@ -35,6 +35,6 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     top: 20,
     left: 5,
-    zIndex: 3
+    zIndex: 1
   }
 })
