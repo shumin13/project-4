@@ -3,7 +3,7 @@ import { Text, View, Image, KeyboardAvoidingView, TextInput, TouchableOpacity, S
 import styles from '../styles/styles.js'
 import firebase from '../Firebase/firebase'
 
-export default class Login extends Component {
+export default class Register extends Component {
   constructor (props) {
     super(props)
     this.state = {

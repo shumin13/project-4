@@ -6,12 +6,11 @@ import Register from './src/components/Auth/Register'
 import Profile from './src/components/Profile/Profile'
 import SideNav from './src/components/SideNav'
 
-import Home from './src/tabs/Home'
-import Settings from './src/tabs/Settings'
+import NewSession from './src/components/Session/NewSession'
 
 const drawerNavigation = DrawerNavigator({
   Tabs: {
-    screen: Home
+    screen: NewSession
   }
 }, {
   // Register custom drawer component

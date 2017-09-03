@@ -69,5 +69,19 @@ module.exports = StyleSheet.create({
   },
   contentContainer: {
     paddingVertical: 20
+  },
+  newSessionContainer: {
+    flex: 1,
+    backgroundColor: '#F2F2F2',
+    paddingTop: Constants.statusBarHeight
+  },
+  sessionText: {
+    fontSize: 16,
+    fontWeight: '500'
+  },
+  sessionLogo: {
+    width: 300,
+    height: 300,
+    justifyContent: 'flex-end'
   }
 })
