@@ -1,6 +1,22 @@
 # Your Project Name
 
-This is the starter code for WDI projects. Please update this README file with information specific to your project. Replace this paragraph for instance, with a short description of your project. Then update the sections below. Refer to your project specificaion for instructions on how to submit your projects.
+*** NAME *** is a collision detection device + phone app that will notify your loved ones on your location when you're our cycling, skiing or even driving. The device should be attached somewhere that may sense the impact and this triggers your phone to send out an SMS to your designated emergency contact with your location and other health related details like blood type and allergies.
+
+This project makes use of:
+
+Hardware
+* Arduino Uno
+* Piezo Sensor
+* 1 Mohm resistor
+* 9V battery
+* Bluetooth module (HC-05)
+
+Software
+* React Native
+* Bluetooth library to pair with hardware
+* GPS library
+* Communications library to send SMS
+* Contacts API to access phone contacts (Expo)
 
 ## Getting Started
 
@@ -51,7 +67,27 @@ What did you use to build it, list the technologies, plugins, gems, packages etc
 
 ## Workflow
 
-Did you write user stories, draw wireframes, use task tracking, produce ERDs? Did you use source control, with regular commits? Include links to them here.
+### ERDs
+
+### Flowchart
+
+### User stories
+* User should be able to register and log-in subsequently
+* Registration page will prompt users to key in health details and emergency contacts from phone
+* Logged-in users should be able to start session that will trigger pairing of bluetooth device for crash detection and turn on GPS for location sensing
+* Upon collision, app will start a 30 seconds countdown that users can dismiss if false-alarm triggered by a bump on the road or a minor accident.
+* If user is in a serious accident and is unable to dismiss the countdown, the app will then automatically send out a message to designated contacts with info on location and previously provided health details.
+
+### Challenges
+1. How to prompt user to pair bluetooth and switch on GPS upon 'start ride session'?
+2. Will locked phone disable sending SMS?
+3. Will app running in background continually sense location coordinate and receive bluetooth data?
+
+### Future Plans
+1. Live-tracking of location & time to enable live updates to emergency contacts even without crash event. This will also enable app to double up as a 'run-keeper' for cyclists, skiiers, motorists or even joggers.
+2. Implmentation of accelerometer for increased accuracy
+3. 'Forget Password' feature
+4. Provide settings page to enable users to amend emergency contact details, personal details like allergies, health status
 
 ## Authors
 
