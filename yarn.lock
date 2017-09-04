@@ -4496,10 +4496,6 @@ react-native-svg@5.3.0:
     color "^0.11.1"
     lodash "^4.16.6"
 
-react-native-switch@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-switch/-/react-native-switch-1.1.0.tgz#4dd6e0dc458668a14a69ec1370e0eb7905c77236"
-
 react-native-tab-view@^0.0.67:
   version "0.0.67"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.67.tgz#cdd146fe5e5d4baff6c89f2d5d0b15fa23db39d0"

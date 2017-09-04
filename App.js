@@ -18,15 +18,15 @@ const drawerNavigation = DrawerNavigator({
 })
 
 export default StackNavigator({
-  Login: {
-    screen: Login
-  },
-  Register: {
-    screen: Register
-  },
-  Profile: {
-    screen: Profile
-  },
+  // Login: {
+  //   screen: Login
+  // },
+  // Register: {
+  //   screen: Register
+  // },
+  // Profile: {
+  //   screen: Profile
+  // },
   DrawerNavigation: {
     screen: drawerNavigation
   }

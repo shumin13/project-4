@@ -70,9 +70,15 @@ module.exports = StyleSheet.create({
   contentContainer: {
     paddingVertical: 20
   },
-  newSessionContainer: {
+  startSessionContainer: {
     flex: 1,
     backgroundColor: '#F2F2F2',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  endSessionContainer: {
+    flex: 1,
+    backgroundColor: '#66CCCC',
     alignItems: 'center',
     justifyContent: 'center'
   }
