@@ -1,4 +1,4 @@
-# Your Project Name
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #4: Project Name
 
 *** NAME *** is a collision detection device + phone app that will notify your loved ones on your location when you're our cycling, skiing or even driving. The device should be attached somewhere that may sense the impact and this triggers your phone to send out an SMS to your designated emergency contact with your location and other health related details like blood type and allergies.
 
@@ -91,9 +91,8 @@ What did you use to build it, list the technologies, plugins, gems, packages etc
 
 ## Authors
 
-Did you collaborate with others on this project, list them here
-
-* **John McClain** - *Responsible for keeping vests white* - [GithubUserName](https://github.com/GithubUserName)
+* **Wan Zhen** - [thecodingdog](https://github.com/thecodingdog)
+* **Shumin** - [shumin13](https://github.com/shumin13)
 
 ## Acknowledgments
 

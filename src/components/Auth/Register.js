@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, Image, KeyboardAvoidingView, TextInput, TouchableOpacity, StatusBar } from 'react-native'
-import { Constants } from 'expo'
-import * as firebase from 'firebase'
+import { Text, View, Image, KeyboardAvoidingView, TextInput, TouchableOpacity, StatusBar } from 'react-native'
+import styles from '../styles/styles.js'
+import firebase from '../Firebase/firebase'
 
-export default class Login extends Component {
+export default class Register extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -72,53 +72,3 @@ export default class Login extends Component {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#6ed3cf',
-    paddingTop: Constants.statusBarHeight
-  },
-  logoContainer: {
-    flexGrow: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  logo: {
-    width: 80,
-    height: 80
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: '700',
-    marginVertical: 20,
-    marginTop: 30
-  },
-  formContainer: {
-    padding: 20
-  },
-  input: {
-    height: 40,
-    backgroundColor: 'rgba(255,255,255,0.5)',
-    marginBottom: 10,
-    color: '#000',
-    paddingHorizontal: 10
-  },
-  buttonContainer: {
-    backgroundColor: '#e1e8f0',
-    paddingVertical: 15
-  },
-  buttonText: {
-    textAlign: 'center',
-    color: '#000',
-    fontWeight: '700'
-  },
-  otherText: {
-    textAlign: 'center',
-    color: 'rgba(0,0,0,0.6)',
-    fontSize: 13,
-    fontWeight: '400',
-    fontStyle: 'italic',
-    marginVertical: 10
-  }
-})
