@@ -5,8 +5,10 @@ import Login from './src/components/Auth/Login'
 import Register from './src/components/Auth/Register'
 import Profile from './src/components/Profile/Profile'
 import SideNav from './src/components/SideNav'
-
 import Session from './src/components/Session/Session'
+
+import ShowProfile from './src/components/Profile/ShowProfile'
+import Message from './src/components/Session/Message'
 
 const drawerNavigation = DrawerNavigator({
   Tabs: {
@@ -27,6 +29,12 @@ export default StackNavigator({
   // Profile: {
   //   screen: Profile
   // },
+  // ShowProfile: {
+  //   screen: ShowProfile
+  // },
+  Message: {
+    screen: Message
+  },
   DrawerNavigation: {
     screen: drawerNavigation
   }
