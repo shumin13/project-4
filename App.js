@@ -21,21 +21,21 @@ const drawerNavigation = DrawerNavigator({
 })
 
 export default StackNavigator({
-  // Login: {
-  //   screen: Login
-  // },
-  // Register: {
-  //   screen: Register
-  // },
-  // Profile: {
-  //   screen: Profile
-  // },
+  Login: {
+    screen: Login
+  },
+  Register: {
+    screen: Register
+  },
+  Profile: {
+    screen: Profile
+  },
   // ShowProfile: {
   //   screen: ShowProfile
   // },
-  Sensor: {
-    screen: Sensor
-  },
+  // Sensor: {
+  //   screen: Sensor
+  // },
   // Message: {
   //   screen: Message
   // },
