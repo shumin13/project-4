@@ -33,12 +33,12 @@ export default StackNavigator({
   // ShowProfile: {
   //   screen: ShowProfile
   // },
-  Sensor: {
-    screen: Sensor
-  },
-  // Message: {
-  //   screen: Message
+  // Sensor: {
+  //   screen: Sensor
   // },
+  Message: {
+    screen: Message
+  },
   DrawerNavigation: {
     screen: drawerNavigation
   }
