@@ -16,6 +16,7 @@
   "dependencies": {
     "expo": "^20.0.0",
     "firebase": "^4.3.0",
+    "maven": "^4.2.0",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "react": "16.0.0-alpha.12",
@@ -23,6 +24,7 @@
     "react-native-ble-plx": "^0.6.1",
     "react-native-communications": "^2.2.1",
     "react-native-keyboard-aware-scroll-view": "^0.3.0",
+    "react-native-sms-android": "^0.4.1",
     "react-native-vector-icons": "^4.3.0",
     "react-navigation": "^1.0.0-beta.11",
     "tcomb-form-native": "^0.6.9"
