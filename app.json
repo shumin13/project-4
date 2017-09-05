@@ -1,5 +1,22 @@
 {
   "expo": {
-    "sdkVersion": "20.0.0"
+    "sdkVersion": "20.0.0",
+    "ios": {
+      "bundleIdentifier": "com.wzsm.project4",
+      "publishBundlePath": "ios/project-4/Supporting/shell-app.bundle",
+      "publishManifestPath": "ios/project-4/Supporting/shell-app-manifest.json"
+    },
+    "android": {
+      "package": "com.wzsm.project4"
+    },
+    "name": "project-4",
+    "slug": "project-4",
+    "version": "0.1.0",
+    "isDetached": true,
+    "detach": {
+      "scheme": "exp7e33fe5c75264e728119966b0bde1e86",
+      "iosExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/ios-v1.19.1-2-sdk20.0.0-1d5bb7d9-2160-4308-9cd1-ee44a73aa597.tar.gz",
+      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v1.19.1-sdk20.0.0-5b613054-1239-439f-9c3a-0aad67cbe39a.tar.gz"
+    }
   }
 }

@@ -13,8 +13,8 @@ export default class Session extends Component {
 
   render () {
     const { navigate } = this.props.navigation
-    let bgImage = this.state.value ? require('../../images/cyclist.gif') : require('../../images/bicycle.gif')
     let containerStyle = this.state.value ? styles.endSessionContainer : styles.startSessionContainer
+    let bgImage = this.state.value ? require('../../images/cyclist.gif') : require('../../images/bicycle.gif')
     let content = this.state.value ? 'End This Session?' : 'Start New Session?'
 
     return (

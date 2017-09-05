@@ -58,7 +58,7 @@ var options = {
   }
 }
 
-export default class Profile extends Component {
+export default class CreateProfile extends Component {
   onPress () {
     var value = this.refs.form.getValue()
     if (value) {
