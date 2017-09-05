@@ -9,6 +9,7 @@ import Session from './src/components/Session/Session'
 
 import ShowProfile from './src/components/Profile/ShowProfile'
 import Message from './src/components/Session/Message'
+import Sensor from './src/components/Sensor/Sensor'
 
 const drawerNavigation = DrawerNavigator({
   Tabs: {
@@ -32,9 +33,12 @@ export default StackNavigator({
   // ShowProfile: {
   //   screen: ShowProfile
   // },
-  Message: {
-    screen: Message
+  Sensor: {
+    screen: Sensor
   },
+  // Message: {
+  //   screen: Message
+  // },
   DrawerNavigation: {
     screen: drawerNavigation
   }
